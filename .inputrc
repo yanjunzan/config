@@ -1,0 +1,9 @@
+"\C-p": history-search-backward
+"\C-o": history-search-forward
+"\C-b": forward-word
+"\C-f": backward-word
+"\C-l": kill-word
+"\C-dL": kill-line
+"\C-k": backward-kill-word
+"\C-dl": backward-kill-line
+"\C-da": kill-line
