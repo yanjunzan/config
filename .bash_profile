@@ -1,11 +1,35 @@
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/yanjunzan/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/yanjunzan/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/yanjunzan/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/yanjunzan/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
+conda activate Stripes
+alias rackham='ssh -AX yanjun@rackham.uppmax.uu.se'
+alias wombat="ssh -AX  yanjun@wombat.imbim.uu.se"
+alias diprotodon="ssh -AX yanjun@diprotodon.imbim.uu.se"
+alias office="ssh -AX yanjunzan@130.238.46.184"
+alias uppmax="ssh -AX yanjun@milou.uppmax.uu.se"
+alias ll="ls -alh"
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-
+PATH=$PATH:/home/yanjun/dmd2/linux/bin64/
+PATH=$PATH:~/Documents/soft/bin
+export PATH
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
-export LIBS="-L/home/yanjun/soft/shapeit/bin/boost_1_55_0/stage/lib"
-export CPPFLAGS="-I/home/yanjun/soft/shapeit/bin/boost_1_55_0"
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
@@ -79,7 +103,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alFh --group-directories-first'
+alias ll='ls -alh'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -154,13 +178,11 @@ fi
 
 # some more ls aliases
 alias lsd='ls -l --color=always | grep ^"d"'
-
+alias ying='ssh yingg@rackham.uppmax.uu.se'
 #My shit
 export LS_COLORS=`echo $LS_COLORS|sed 's/34\;42/0\;45/g'`
-export LS_COLORS=`echo $LS_COLORS|sed 's/di=01\;34/di=01\;36/'i`
+export LS_COLORS=`echo $LS_COLORS|sed 's/di=01\;34/di=01\;36/'`
 export BT2_HOME=/home/simon/projects/bin/bowtie2-2.2.3
-export LC_ALL="en_US.UTF-8"
-#test
-export LANGUAGE="en"
-export LANG="C"
-export LC_MESSAGES="C"
+alias git='LANG=en_GB git'
+alias ll='ls -alh'
+conda init bash
